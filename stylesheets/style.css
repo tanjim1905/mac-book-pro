@@ -1,0 +1,41 @@
+button {
+  background: #fff;
+  border: 1px solid gray;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+tr {
+  border-bottom: 1px solid rgb(231, 229, 229);
+}
+
+.border-black {
+  border-bottom: 1px solid #000;
+}
+
+td {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.table-price {
+  padding-left: 50px;
+}
+
+#coupon-input {
+  border: 1px solid rgb(185, 180, 180);
+  padding: 5px 8px;
+  border-radius: 5px;
+  outline: none;
+}
+
+#coupon-button {
+  color: #fff;
+  background-color: #dc3545;
+  margin-left: -5px;
+  outline: none;
+}
+
+.coupon-total {
+  border-top: 1px solid rgb(170, 170, 170);
+}
