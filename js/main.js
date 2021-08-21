@@ -7,8 +7,9 @@ function productPrice(product, price){
     calculateTotal()
 }
 
-// function for Total Price
+// function for calculate and update total price
 function calculateTotal(){
+    // get elements
     const memoryCost = parseFloat(document.getElementById('memory-cost').innerText);
     const storageCost = parseFloat(document.getElementById('storage-cost').innerText);
     const deliveryCost = parseFloat(document.getElementById('delivery-cost').innerText);
@@ -22,7 +23,8 @@ function calculateTotal(){
     totalDiscountCost.innerText = parseInt(totalCost.innerText);
 }
 
-
+// event listeners
+// memory cost
 document.getElementById('memory-one').addEventListener('click', function(){
     productPrice('memory', 0);
 })
@@ -31,6 +33,7 @@ document.getElementById('memory-two').addEventListener('click', function(){
     productPrice('memory', 180);
 })
 
+// storage cost
 document.getElementById('storage-one').addEventListener('click', function(){
     productPrice('storage', 0);
 })
@@ -42,6 +45,7 @@ document.getElementById('storage-three').addEventListener('click', function(){
     productPrice('storage', 180);
 })
 
+// shipping cost
 document.getElementById('delivery-one').addEventListener('click', function(){
     productPrice('delivery', 0);
 })
@@ -55,6 +59,7 @@ const couponInput = document.getElementById('coupon-input');
 const couponButton = document.getElementById('coupon-button');
 const totalDiscountCost = document.getElementById('discount-total');
 
+// apply coupon code button event
 couponButton.addEventListener('click', function(){
     if(couponInput.value == 'stevekaku'){
         if(!isCouponCodeApplied){
