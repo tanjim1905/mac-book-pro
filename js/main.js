@@ -1,0 +1,64 @@
+function productPrice(product, price){
+    const productCost = document.getElementById(product + '-cost')
+    productCost.innerText = price;
+
+    calculateTotal()
+}
+
+function calculateTotal(){
+    const memoryCost = parseFloat(document.getElementById('memory-cost').innerText);
+    const storageCost = parseFloat(document.getElementById('storage-cost').innerText);
+    const deliveryCost = parseFloat(document.getElementById('delivery-cost').innerText);
+    const bestPrice = parseFloat(document.getElementById('best-price').innerText);
+    const totalCost = document.getElementById('total-cost');
+    totalCost.innerText = bestPrice + memoryCost + storageCost + deliveryCost;
+    
+    const totalDiscountCost = document.getElementById('discount-total');
+    totalDiscountCost.innerText = parseInt(totalCost.innerText);
+
+    return totalDiscountCost;
+}
+
+
+document.getElementById('memory-one').addEventListener('click', function(){
+    productPrice('memory', 0);
+})
+
+document.getElementById('memory-two').addEventListener('click', function(){
+    productPrice('memory', 180);
+})
+
+document.getElementById('storage-one').addEventListener('click', function(){
+    productPrice('storage', 0);
+})
+
+document.getElementById('storage-two').addEventListener('click', function(){
+    productPrice('storage', 100);
+})
+document.getElementById('storage-three').addEventListener('click', function(){
+    productPrice('storage', 180);
+})
+
+document.getElementById('delivery-one').addEventListener('click', function(){
+    productPrice('delivery', 0);
+})
+
+document.getElementById('delivery-two').addEventListener('click', function(){
+    productPrice('delivery', 20);
+})
+
+// total with discount
+const couponInput = document.getElementById('coupon-input');
+const couponButton = document.getElementById('coupon-button');
+const totalDiscountCost = document.getElementById('discount-total');
+
+couponButton.addEventListener('click', function(){
+    if(couponInput.value == 'stevekaku'){
+        const discount = (parseInt(totalDiscountCost.innerText) * 20) / 100;
+        totalDiscountCost.innerText = parseInt(totalDiscountCost.innerText) - discount;
+        couponInput.value = '';
+        
+    } else{
+        alert('Please Type Correct Coupon Code!');
+    }
+})

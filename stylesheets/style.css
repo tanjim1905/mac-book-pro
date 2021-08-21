@@ -5,6 +5,11 @@ button {
   border-radius: 5px;
 }
 
+button:hover {
+  background-color: rgb(90, 75, 75);
+  color: #fff;
+}
+
 tr {
   border-bottom: 1px solid rgb(231, 229, 229);
 }
